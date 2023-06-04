@@ -792,7 +792,7 @@ int main()
     Student s1;
     Book b1;
     int choice = 0;
-    // password();
+    password();
     while (choice != 5)
     {
         system("cls");
