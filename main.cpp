@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #include <conio.h>
 #include <windows.h>
 
@@ -80,65 +80,65 @@ public:
 
 void Menu::mainMenu()
 {
-    gotoxy(30,1);
+    gotoxy(30, 1);
     cout << "========================================================" << endl;
-    gotoxy(53,2);
-    cout<<"Main Menu"<<endl;
-    gotoxy(30,3);
+    gotoxy(53, 2);
+    cout << "Main Menu" << endl;
+    gotoxy(30, 3);
     cout << "========================================================" << endl;
-    gotoxy(32,4);
+    gotoxy(32, 4);
     cout << "1. Student Menu " << endl;
-    gotoxy(32,5);
+    gotoxy(32, 5);
     cout << "2. Book Menu " << endl;
-    gotoxy(32,6);
+    gotoxy(32, 6);
     cout << "3. Issue Book " << endl;
-    gotoxy(32,7);
+    gotoxy(32, 7);
     cout << "4. Return Book " << endl;
-    gotoxy(32,8);
+    gotoxy(32, 8);
     cout << "5. Exit " << endl;
 }
 
 void Menu::studentMenu()
 {
-    gotoxy(30,1);
+    gotoxy(30, 1);
     cout << "========================================================" << endl;
-    gotoxy(53,2);
-    cout<<"Student Menu "<<endl;
-    gotoxy(30,3);
+    gotoxy(53, 2);
+    cout << "Student Menu " << endl;
+    gotoxy(30, 3);
     cout << "========================================================" << endl;
-    gotoxy(33,4);
+    gotoxy(33, 4);
     cout << "1. New Entry " << endl;
-    gotoxy(33,5);
+    gotoxy(33, 5);
     cout << "2. Modify Entry " << endl;
-    gotoxy(33,6);
+    gotoxy(33, 6);
     cout << "3. Search Entry " << endl;
-    gotoxy(33,7);
+    gotoxy(33, 7);
     cout << "4. Delete Entry " << endl;
-    gotoxy(33,8);
+    gotoxy(33, 8);
     cout << "5. View All Entry " << endl;
-    gotoxy(33,9);
+    gotoxy(33, 9);
     cout << "6. Go Back To Previous Menu " << endl;
 }
 
 void Menu::bookMenu()
 {
-    gotoxy(30,1);
+    gotoxy(30, 1);
     cout << "========================================================" << endl;
-    gotoxy(53,2);
-    cout<<"Book Menu "<<endl;
-    gotoxy(30,3);
+    gotoxy(53, 2);
+    cout << "Book Menu " << endl;
+    gotoxy(30, 3);
     cout << "========================================================" << endl;
-    gotoxy(33,4);
+    gotoxy(33, 4);
     cout << "1. New Entry " << endl;
-    gotoxy(33,5);
+    gotoxy(33, 5);
     cout << "2. Modify Entry " << endl;
-    gotoxy(33,6);
+    gotoxy(33, 6);
     cout << "3. Search Entry " << endl;
-    gotoxy(33,7);
+    gotoxy(33, 7);
     cout << "4. Delete Entry " << endl;
-    gotoxy(33,8);
+    gotoxy(33, 8);
     cout << "5. View All Entry " << endl;
-    gotoxy(33,9);
+    gotoxy(33, 9);
     cout << "6. Go Back To Previous Menu " << endl;
 }
 
@@ -207,8 +207,8 @@ void Book::inputDetails()
 
     file.write((char *)&book, sizeof(BookData));
     file.close();
-    gotoxy(60,16);
-    cout<<"Book Added Successfully !!";
+    gotoxy(60, 16);
+    cout << "Book Added Successfully !!";
 }
 
 void Book::modifyDetails()
@@ -250,7 +250,7 @@ void Book::modifyDetails()
             cout << "Enter New Book Price: ";
             cin >> book.price;
 
-            file.write((char*)&book , sizeof(BookData));
+            file.write((char *)&book, sizeof(BookData));
             file.close();
             cout << "Record Updated";
             return;
@@ -419,12 +419,11 @@ void Student::inputDetails()
     cout << "Enter Student Address : ";
     fflush(stdin);
     gets(student.address);
-    
 
     file.write((char *)&student, sizeof(StudentData));
     file.close();
-    gotoxy(60,16);
-    cout<<"Student Added Successfully !!";
+    gotoxy(60, 16);
+    cout << "Student Added Successfully !!";
 }
 
 void Student::modifyDetails()
@@ -462,7 +461,7 @@ void Student::modifyDetails()
             fflush(stdin);
             gets(student.address);
 
-            file.write((char*)&student , sizeof(StudentData));
+            file.write((char *)&student, sizeof(StudentData));
             file.close();
             cout << "Record Updated";
             return;
@@ -653,18 +652,18 @@ void Menu::issueBook()
         student.status = 1;
         book.status = 1;
         book.issuedRollNo = student.rollNo;
-        gotoxy(6,3);
-        cout<<"Issue Date "<<endl;
+        gotoxy(6, 3);
+        cout << "Issue Date " << endl;
         book.issueDate.setDate();
-        gotoxy(6,7);
-        cout<<"Return Date "<<endl;
+        gotoxy(6, 7);
+        cout << "Return Date " << endl;
         book.returnDate.setDate();
         sp.write((char *)&student, sizeof(StudentData));
         bp.write((char *)&book, sizeof(BookData));
         sp.close();
         bp.close();
-        gotoxy(60,10);
-        cout<<"Book Issued Successfully !!"<<endl;
+        gotoxy(60, 10);
+        cout << "Book Issued Successfully !!" << endl;
     }
     else
     {
@@ -702,9 +701,9 @@ void Menu::returnBook()
     StudentData student;
     BookData book;
 
-    gotoxy(50,3);
+    gotoxy(50, 3);
     cout << "Enter Student's Roll No. To Return Book : ";
-    gotoxy(50,4);
+    gotoxy(50, 4);
     cin >> roll;
 
     while (sp.read((char *)&student, sizeof(StudentData)))
@@ -758,8 +757,8 @@ void Menu::returnBook()
         bp.write((char *)&book, sizeof(BookData));
         sp.close();
         bp.close();
-        gotoxy(60,10);
-        cout<<"Book Returned Successfully !!"<<endl;
+        gotoxy(60, 10);
+        cout << "Book Returned Successfully !!" << endl;
     }
     else
     {
@@ -797,9 +796,9 @@ int main()
     {
         system("cls");
         menu.mainMenu();
-        gotoxy(15,10);
+        gotoxy(15, 10);
         cout << "Enter Your Choice : " << endl;
-        gotoxy(15,11);
+        gotoxy(15, 11);
         cin >> choice;
 
         switch (choice)
@@ -808,9 +807,9 @@ int main()
         {
             system("cls");
             menu.studentMenu();
-            gotoxy(15,10);
+            gotoxy(15, 10);
             cout << "Enter Your Choice :" << endl;
-            gotoxy(15,11);
+            gotoxy(15, 11);
             cin >> choice;
             switch (choice)
             {
@@ -828,12 +827,12 @@ int main()
                 break;
             case 5:
                 s1.viewAllStudentDetails();
-                choice=1;
+                choice = 1;
                 break;
             case 6:
                 break;
             default:
-                gotoxy(50,13);
+                gotoxy(50, 13);
                 cout << "Wrong Choice Input !!!" << endl;
             }
             break;
@@ -843,9 +842,9 @@ int main()
         {
             system("cls");
             menu.bookMenu();
-            gotoxy(15,10);
+            gotoxy(15, 10);
             cout << "Enter Your Choice :" << endl;
-            gotoxy(15,11);
+            gotoxy(15, 11);
             cin >> choice;
             switch (choice)
             {
@@ -863,12 +862,12 @@ int main()
                 break;
             case 5:
                 b1.viewAllBookDetails();
-                choice=1;
+                choice = 1;
                 break;
             case 6:
                 break;
             default:
-                gotoxy(50,13);
+                gotoxy(50, 13);
                 cout << "Wrong Choice Input !!!" << endl;
             }
             break;
@@ -886,16 +885,16 @@ int main()
 
         case 5:
             system("cls");
-            gotoxy(60,13);
+            gotoxy(60, 13);
             cout << "Thank You !!!";
             break;
 
         default:
-            gotoxy(50,13);
+            gotoxy(50, 13);
             cout << "Please Enter Correct Input !!";
             break;
         } // switch
         getch();
-    }     // while
+    } // while
     return 0;
 }
